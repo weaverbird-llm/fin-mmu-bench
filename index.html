@@ -24,26 +24,34 @@
   <link href="./style/bird.css" rel="stylesheet">
 
   <style>
+    .hidden {
+      display:  none;
+    }
+
+    /* Contributor Font */
     contributor-font {
       font-family: cursive;
       font-size: 18px;
       color: #ffffff;
     }
-  </style>
 
-  <style>
-    .hidden {
-      display:  none;
+    /* 单元格悬停变色 */
+    td:hover {
+      background-color: #eeeeee9b; /* 你可以根据需要修改颜色 */
+    }
+    th:hover {
+      background-color: #bb3737d7; /* 你可以根据需要修改颜色 */
     }
   </style>
 
+  <script src="script/sort-table.js"></script>
 </head>
 
 <!-- Title -->
 <body>
   <header class="masthead" id="header-color">
     <div style="background-color: #485159; text-align: left;">
-      <img style="margin-top: 5px; padding: 10px;" height="95px" src="./logo/ant3.png">
+      <img style="margin-top: 5px; padding: 10px;" height="95px" src="./logo/alipay4.png">
       <img style="margin-top: 5px; padding: 10px;" height="95px" src="./logo/zju.png">
       <img style="margin-top: 5px; padding: 10px;" height="105px" src="./logo/ali.png">
     </div>
@@ -868,27 +876,27 @@
             </table>
           </div>
         </div>
-        
+
         <!-- Button Change (English, Chinese, French) -->
         <button id="toggleButton" onclick="changeTableAndButtonText()">
-          <b style='font-size: larger;'>Leaderboard (English)</b>
+          <b style='font-size: larger;'>Click to switch between English/Chinese/French</b>
         </button>
-        
+       
         <!-- Leaderboard (English) -->
         <div class="card card-outline-secondary" id="english-table">
           <div class="card-header">Leaderboard (English)</div>
           <div class="table-wrapper">
-            <table class="table">
+            <table class="table js-sort-table">
               <!-- Table content -->
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Model</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Size</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Overall</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Easy</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Medium</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Hard</th>
-                </tr>
+                  <th scope="col" class="align-middle text-center js-sort-string" data-js-sort-colNum="0">Model</th>
+                  <th scope="col" class="align-middle text-center js-sort-string" data-js-sort-colNum="1">Size</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="2">Overall</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="3">Easy</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="4">Medium</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="5">Hard</th>
+              </tr>
               </thead>
               <tbody>
                 <tr class="table-success">
@@ -929,17 +937,17 @@
         <div class="card card-outline-secondary hidden" id="chinese-table">
           <div class="card-header">Leaderboard (Chinese)</div>
           <div class="table-wrapper">
-            <table class="table">
+            <table class="table js-sort-table">
               <!-- Table content -->
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Model</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Size</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Overall</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Easy</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Medium</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Hard</th>
-                </tr>
+                  <th scope="col" class="align-middle text-center js-sort-string" data-js-sort-colNum="0">Model</th>
+                  <th scope="col" class="align-middle text-center js-sort-string" data-js-sort-colNum="1">Size</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="2">Overall</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="3">Easy</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="4">Medium</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="5">Hard</th>
+              </tr>
               </thead>
               <tbody>
                 <tr class="table-success">
@@ -980,17 +988,17 @@
         <div class="card card-outline-secondary hidden" id="french-table">
           <div class="card-header">Leaderboard (French)</div>
           <div class="table-wrapper">
-            <table class="table">
+            <table class="table js-sort-table">
               <!-- Table content -->
               <thead class="thead-light">
                 <tr>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Model</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Size</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Overall</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Easy</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Medium</th>
-                  <th scope="col" rowspan="1" class="align-middle text-center">Hard</th>
-                </tr>
+                  <th scope="col" class="align-middle text-center js-sort-string" data-js-sort-colNum="0">Model</th>
+                  <th scope="col" class="align-middle text-center js-sort-string" data-js-sort-colNum="1">Size</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="2">Overall</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="3">Easy</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="4">Medium</th>
+                  <th scope="col" class="align-middle text-center js-sort-number" data-js-sort-colNum="5">Hard</th>
+              </tr>
               </thead>
               <tbody>
                 <tr class="table-success">
@@ -1030,7 +1038,7 @@
         <script>
           let currentTable = 0; // 0: English, 1: Chinese, 2: French
           const tableIds = ['english-table', 'chinese-table', 'french-table'];
-          const tableNames = ['Leaderboard (Click to switch)', 'Leaderboard (Click to switch)', 'Leaderboard (Click to switch)'];
+          const tableNames = ['Click to switch between English/Chinese/French', 'Click to switch between English/Chinese/French', 'Click to switch between English/Chinese/French'];
 
           function changeTableAndButtonText() {
             // Hide all tables
