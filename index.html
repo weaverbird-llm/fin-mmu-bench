@@ -868,7 +868,7 @@
         </button>
        
         <!-- Leaderboard (English) -->
-        <div class="card card-outline-secondary" id="english-table">
+        <div class="card card-outline-secondary hidden" id="english-table">
           <div class="card-header">Leaderboard (English)</div>
           <div class="table-wrapper">
             <table class="table js-sort-table">
@@ -1022,7 +1022,7 @@
 
         <script>
           let currentTable = 0; // 0: English, 1: Chinese, 2: French
-          const tableIds = ['english-table', 'chinese-table', 'french-table'];
+          const tableIds = ['french-table', 'english-table', 'chinese-table'];
           const tableNames = ['Click to switch between English/Chinese/French', 'Click to switch between English/Chinese/French', 'Click to switch between English/Chinese/French'];
 
           function changeTableAndButtonText() {
