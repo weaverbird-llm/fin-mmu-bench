@@ -31,6 +31,12 @@
     }
   </style>
 
+  <style>
+    .hidden {
+      display:  none;
+    }
+  </style>
+
 </head>
 
 <!-- Title -->
@@ -862,6 +868,134 @@
             </table>
           </div>
         </div>
+        
+        <!-- Button Change (English, Chinese, French) -->
+        <button id="toggleButton" onclick="changeTableAndButtonText()">
+          <b style='font-size: larger;'>Leaderboard (English)</b>
+        </button>
+        
+        <!-- Leaderboard (English) -->
+        <div class="card card-outline-secondary" id="english-table">
+          <div class="card-header">Leaderboard (English)</div>
+          <div class="table-wrapper">
+            <table class="table">
+              <!-- Table content -->
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" rowspan="1"></th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Model</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Code</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Size</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Oracle Knowledge</th>
+                  <th scope="col" colspan="1" class="text-center">Dev (%)</th>
+                  <th scope="col" colspan="1" class="text-center">Test (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-success">
+                  <td scope="row" class="align-middle text-center"><br>
+                  </td>
+                  <td class="align-middle text-center">Human Performance<br>
+                    <span class="affiliation">Data Engineers + DB Students</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">✔️</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"><b>92.96</b></td>
+                </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Leaderboard (Chinese) -->
+        <div class="card card-outline-secondary hidden" id="chinese-table">
+          <div class="card-header">Leaderboard (Chinese)</div>
+          <div class="table-wrapper">
+            <table class="table">
+              <!-- Table content -->
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" rowspan="1"></th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Model</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Code</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Size</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Oracle Knowledge</th>
+                  <th scope="col" colspan="1" class="text-center">Dev (%)</th>
+                  <th scope="col" colspan="1" class="text-center">Test (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-success">
+                  <td scope="row" class="align-middle text-center"><br>
+                  </td>
+                  <td class="align-middle text-center">Human Performance<br>
+                    <span class="affiliation">Data Engineers + DB Students</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">✔️</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"><b>92.96</b></td>
+                </tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- Leaderboard (French) -->
+        <div class="card card-outline-secondary hidden" id="french-table">
+          <div class="card-header">Leaderboard (French)</div>
+          <div class="table-wrapper">
+            <table class="table">
+              <!-- Table content -->
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col" rowspan="1"></th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Model</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Code</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Size</th>
+                  <th scope="col" rowspan="1" class="align-middle text-center">Oracle Knowledge</th>
+                  <th scope="col" colspan="1" class="text-center">Dev (%)</th>
+                  <th scope="col" colspan="1" class="text-center">Test (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table-success">
+                  <td scope="row" class="align-middle text-center"><br>
+                  </td>
+                  <td class="align-middle text-center">Human Performance<br>
+                    <span class="affiliation">Data Engineers + DB Students</span><br><a href="" class="paperlink"></a>
+                  </td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center">✔️</td>
+                  <td class="align-middle text-center"></td>
+                  <td class="align-middle text-center"><b>92.96</b></td>
+                </tr>
+            </table>
+          </div>
+        </div>
+
+        <script>
+          let currentTable = 0; // 0: English, 1: Chinese, 2: French
+          const tableIds = ['english-table', 'chinese-table', 'french-table'];
+          const tableNames = ['Leaderboard (English)', 'Leaderboard (Chinese)', 'Leaderboard (French)'];
+
+          function changeTableAndButtonText() {
+            // Hide all tables
+            tableIds.forEach(id => document.getElementById(id).classList.add('hidden'));
+
+            // Show the next table
+            currentTable = (currentTable + 1) % tableIds.length;
+            document.getElementById(tableIds[currentTable]).classList.remove('hidden');
+
+            // Update button text
+            document.getElementById('toggleButton').innerHTML = `<b style='font-size: larger;'>${tableNames[currentTable]}</b>`;
+          }
+
+          // Show the English table by default
+          changeTableAndButtonText();
+        </script>
 
       </div>
 
