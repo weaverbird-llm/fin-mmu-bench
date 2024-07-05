@@ -9,7 +9,7 @@
   <meta name="description" content="FinMMU">
   <meta name="author" content="">
   <link rel="icon" href="./logo/weaverBird.png" type="image/x-icon">
-  <title>WeaverBird</title>
+  <title>FinMMU</title>
 
   <!-- Bootstrap core CSS -->
   <link href="./style/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +28,17 @@
       display:  none;
     }
 
+    .main-content {
+      flex: 1; /* 主内容占 2 份 */
+      min-width: 300px; /* 确保在小屏幕设备上显示正常 */
+      margin-right: 20px;
+    }
+  
+    .leaderboard {
+      flex: 1; /* 领导榜占 1 份 */
+      min-width: 200px; /* 确保在小屏幕设备上显示正常 */
+    }
+
     /* Contributor Font */
     contributor-font {
       font-family: cursive;
@@ -42,6 +53,8 @@
     th:hover {
       background-color: #bb3737d7; /* 你可以根据需要修改颜色 */
     }
+
+
   </style>
 
   <script src="script/sort-table.js"></script>
@@ -60,10 +73,10 @@
       <div class="row">
         <div class="col-lg-10 col-md-12 mx-auto">
           <div class="row site-heading flex-box">
-            <div class="col-lg-3">
+            <div class="col-lg-2">
               <img id="logo-img" src="logo/weaverBird.png" alt="logo" />
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-10">
               <div class="align-middle">
                 <h1 id="bird-title">
                   FinMMU
@@ -80,8 +93,8 @@
 
   <!-- Main Content -->
   <div class="container" id="main">
-    <div class="row">
-      <div class="col-lg-5">
+    <div class="row custom-row">
+      <div class="main-content">
         <div class="list-group">
           <div class="list-group-item" id="introduction">
             <!-- <div style="display: grid; grid-template-columns: auto auto; align-items: center;"> -->
@@ -292,7 +305,7 @@
       </div>
 
 <!-- LeaderBoard -->
-      <div class="col-lg-7">
+      <div class="leaderboard">
         
         <!-- <div class="card card-outline-secondary">
           <div class="card-header">
